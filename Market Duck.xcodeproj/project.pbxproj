@@ -12,6 +12,7 @@
 		F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */; };
 		F5EFAEE22C2319AD00DDEB0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAEE12C2319AD00DDEB0A /* Preview Assets.xcassets */; };
 		F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEE82C23435B00DDEB0A /* HomeView.swift */; };
+		F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5EFAEE12C2319AD00DDEB0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5EFAEE82C23435B00DDEB0A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
+				F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */,
 				F5EFAEE82C23435B00DDEB0A /* HomeView.swift */,
 				F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */,
 				F5EFAEE02C2319AD00DDEB0A /* Preview Content */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */,
 				F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */,
 				F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */,
 				F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */,
