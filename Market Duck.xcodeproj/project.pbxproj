@@ -19,6 +19,7 @@
 		F5EFAEF32C252E2500DDEB0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */; };
 		F5EFAEF52C25353500DDEB0A /* MembershipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF42C25353500DDEB0A /* MembershipView.swift */; };
 		F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF62C2548E500DDEB0A /* LoginView.swift */; };
+		F5EFAF022C25D16700DDEB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F5EFAEF42C25353500DDEB0A /* MembershipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipView.swift; sourceTree = "<group>"; };
 		F5EFAEF62C2548E500DDEB0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Market-Duck-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 		F5EFAECE2C2319AB00DDEB0A = {
 			isa = PBXGroup;
 			children = (
+				F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */,
 				F5EFAED92C2319AB00DDEB0A /* Market Duck */,
 				F5EFAED82C2319AB00DDEB0A /* Products */,
 			);
@@ -67,6 +71,7 @@
 		F5EFAED92C2319AB00DDEB0A /* Market Duck */ = {
 			isa = PBXGroup;
 			children = (
+				F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */,
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
 				F5EFAEF62C2548E500DDEB0A /* LoginView.swift */,
@@ -149,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EFAF022C25D16700DDEB0A /* LaunchScreen.storyboard in Resources */,
 				F5EFAEE22C2319AD00DDEB0A /* Preview Assets.xcassets in Resources */,
 				F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */,
 			);
@@ -307,9 +313,11 @@
 				DEVELOPMENT_TEAM = 3CZA3RR964;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Market-Duck-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,9 +344,11 @@
 				DEVELOPMENT_TEAM = 3CZA3RR964;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Market-Duck-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

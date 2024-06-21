@@ -17,11 +17,11 @@ struct MembershipView: View {
                 Image("membership_banner")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 381)
+                    .frame(width: 461)
                     .overlay(alignment: .topLeading){
                         Text("見習小鴨")
                             .font(.system(size: 24,weight: .bold))
-                            .offset(x:80, y: 80)
+                            .offset(x:110, y: 110)
                     }
                 Experience(experience: 3650)
                     .padding(.bottom, 30)
@@ -86,7 +86,7 @@ struct Experience: View {
                 .font(.system(size: 13))
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color("trending_block_color"))
-                .frame(width: 279, height: 21)
+                .frame(width: 300, height: 21)
                 .overlay(alignment: .leading){
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color("label_color"))
@@ -94,7 +94,7 @@ struct Experience: View {
                 }
                 .onAppear{
                     withAnimation(.spring(duration: 0.8,bounce: 0.3).delay(0.5).speed(1.1)){
-                        self.expWidth = CGFloat(experience * 279/5000)
+                        self.expWidth = CGFloat(experience * 300/5000)
                     }
                 }
         }
@@ -102,7 +102,7 @@ struct Experience: View {
 }
 
 #Preview {
-    NavigationStack{
-        MembershipView()
-    }
+    
+    MembershipView()
+    
 }
