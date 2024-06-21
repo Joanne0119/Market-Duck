@@ -39,10 +39,11 @@ struct ContentView: View {
                 case .favorite:
                     FavoriteView()
                 case .profile:
-                    Text("profile")
+                    ProfileView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea()
             
             VStack {
                 Spacer()
