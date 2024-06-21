@@ -20,6 +20,7 @@
 		F5EFAEF52C25353500DDEB0A /* MembershipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF42C25353500DDEB0A /* MembershipView.swift */; };
 		F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF62C2548E500DDEB0A /* LoginView.swift */; };
 		F5EFAF022C25D16700DDEB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */; };
+		F5EFAF042C25D29700DDEB0A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAF032C25D29700DDEB0A /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F5EFAEF62C2548E500DDEB0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Market-Duck-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5EFAF032C25D29700DDEB0A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
 				F5EFAEF62C2548E500DDEB0A /* LoginView.swift */,
+				F5EFAF032C25D29700DDEB0A /* SignupView.swift */,
 				F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */,
 				F5EFAEF42C25353500DDEB0A /* MembershipView.swift */,
 				F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */,
@@ -176,6 +179,7 @@
 				F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */,
 				F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */,
 				F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */,
+				F5EFAF042C25D29700DDEB0A /* SignupView.swift in Sources */,
 				F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
