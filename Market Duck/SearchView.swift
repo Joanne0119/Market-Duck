@@ -163,7 +163,8 @@ struct SearchCard: View {
                         .frame(width: 24, height: 19)
                         .padding(3)
                 }
-                .padding([.trailing, .bottom], 10),
+                .padding(.trailing, 10)
+                .padding(.bottom, 10),
                 alignment: .bottomTrailing
             )
             .background(.white)

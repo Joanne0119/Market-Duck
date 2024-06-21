@@ -14,7 +14,7 @@ struct ContentView: View {
         case home
         case map
         case search
-        case save
+        case favorite
         case profile
     }
     @State var curPage = PageController.home
@@ -36,8 +36,8 @@ struct ContentView: View {
                     Text("map")
                 case .search:
                     SearchView()
-                case .save:
-                    Text("save")
+                case .favorite:
+                    FavoriteView()
                 case .profile:
                     Text("profile")
                 }

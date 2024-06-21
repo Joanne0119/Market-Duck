@@ -28,7 +28,7 @@ struct BottomBar: View {
                 Spacer()
                 BottomBarButton(icon: "home_icon", selectedIcon: "home_icon_selected", page: .home, curPage: $curPage, isLarge: true)
                 Spacer()
-                BottomBarButton(icon: "save_icon", selectedIcon: "save_icon_selected", page: .save, curPage: $curPage)
+                BottomBarButton(icon: "favorite_icon", selectedIcon: "favorite_icon_selected", page: .favorite, curPage: $curPage)
                 Spacer()
                 BottomBarButton(icon: "profile_icon", selectedIcon: "profile_icon_selected", page: .profile, curPage: $curPage)
                 Spacer()

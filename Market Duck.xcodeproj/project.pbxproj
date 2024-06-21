@@ -15,6 +15,7 @@
 		F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */; };
 		F5EFAEED2C23DFD800DDEB0A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEEC2C23DFD800DDEB0A /* SearchView.swift */; };
 		F5EFAEEF2C251CF200DDEB0A /* SearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEEE2C251CF200DDEB0A /* SearchingView.swift */; };
+		F5EFAEF12C25280100DDEB0A /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		F5EFAEEC2C23DFD800DDEB0A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F5EFAEEE2C251CF200DDEB0A /* SearchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingView.swift; sourceTree = "<group>"; };
+		F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
+				F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */,
 				F5EFAEEA2C23C4A400DDEB0A /* BottomBar.swift */,
 				F5EFAEE82C23435B00DDEB0A /* HomeView.swift */,
 				F5EFAEEC2C23DFD800DDEB0A /* SearchView.swift */,
@@ -151,6 +154,7 @@
 			files = (
 				F5EFAEED2C23DFD800DDEB0A /* SearchView.swift in Sources */,
 				F5EFAEEF2C251CF200DDEB0A /* SearchingView.swift in Sources */,
+				F5EFAEF12C25280100DDEB0A /* FavoriteView.swift in Sources */,
 				F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */,
 				F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */,
 				F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */,
