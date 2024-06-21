@@ -12,7 +12,7 @@ struct BottomBar: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(height: 100)
+                .frame(height: 110)
                 .foregroundColor(Color("bottom_bar_color"))
             
             Ellipse()
@@ -52,7 +52,7 @@ struct BottomBarButton: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: isLarge ? 90 : 45, height: isLarge ? (curPage == page ? 90 : 80) : (curPage == page ? 48 : 40))
-                .offset(y: isLarge ? -20: -8)
+                .offset(y: isLarge ? -25: -10)
         }
     }
 }

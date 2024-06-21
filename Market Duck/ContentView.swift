@@ -35,7 +35,7 @@ struct ContentView: View {
                 case .map:
                     Text("map")
                 case .search:
-                    Text("search")
+                    SearchView()
                 case .save:
                     Text("save")
                 case .profile:
@@ -47,7 +47,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 BottomBar(curPage: $curPage)
-                    .frame(height: 70)
+                    .frame(height: 100)
             }
             .ignoresSafeArea(edges: .bottom)
         }
