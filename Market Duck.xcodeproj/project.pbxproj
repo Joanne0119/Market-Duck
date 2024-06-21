@@ -18,6 +18,7 @@
 		F5EFAEF12C25280100DDEB0A /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */; };
 		F5EFAEF32C252E2500DDEB0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */; };
 		F5EFAEF52C25353500DDEB0A /* MembershipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF42C25353500DDEB0A /* MembershipView.swift */; };
+		F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF62C2548E500DDEB0A /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F5EFAEF42C25353500DDEB0A /* MembershipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipView.swift; sourceTree = "<group>"; };
+		F5EFAEF62C2548E500DDEB0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
+				F5EFAEF62C2548E500DDEB0A /* LoginView.swift */,
 				F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */,
 				F5EFAEF42C25353500DDEB0A /* MembershipView.swift */,
 				F5EFAEF02C25280100DDEB0A /* FavoriteView.swift */,
@@ -166,6 +169,7 @@
 				F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */,
 				F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */,
 				F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */,
+				F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */,
 				F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
