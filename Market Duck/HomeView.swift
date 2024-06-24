@@ -6,37 +6,19 @@
 //
 
 import SwiftUI
-let eventCarousel = [ "Image4",
-                    "Image2",
-                    "Image3",
-                    "Image1",
-                    "Image5"]
+let eventCarousel = [ "mk01",
+                    "mk02",
+                    "mk03",
+                    "mk04",
+                    "mk05"]
 
-//struct eventCard: Identifiable {
-//    let id = UUID()
-//    let title: String
-//    let date: String
-//    let time: String
-//    let image:  String
-//    let description: String
-//    
-//    let address: String
-//    let isSave: Bool
-//    let totalComment: Int
-//    let score: Float
-//}
-//
-//class eventCardModle: ObservableObject {
-//    @Published var messagesData = [
-//        
-//    ]
-//}
 
-let eventCard = [ "Image4",
-                "Image2",
-                "Image3",
-                "Image1",
-                "Image5"]
+
+let eventCard = [ "mk06",
+                "mk07",
+                "mk08",
+                "mk09",
+                "mk10"]
 
 struct HomeView: View {
     var body: some View {

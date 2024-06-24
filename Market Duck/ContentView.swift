@@ -33,7 +33,7 @@ struct ContentView: View {
                 case .home:
                     HomeView()
                 case .map:
-                    Text("map")
+                    MapView()
                 case .search:
                     SearchView()
                 case .favorite:

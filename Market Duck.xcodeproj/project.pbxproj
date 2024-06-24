@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5DC8CCB2C29BD2E003991B9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CCA2C29BD2E003991B9 /* MapView.swift */; };
 		F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */; };
 		F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */; };
 		F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5DC8CCA2C29BD2E003991B9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F5EFAED72C2319AB00DDEB0A /* Market Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Market Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market_DuckApp.swift; sourceTree = "<group>"; };
 		F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */,
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
+				F5DC8CCA2C29BD2E003991B9 /* MapView.swift */,
 				F5EFAEF62C2548E500DDEB0A /* LoginView.swift */,
 				F5EFAF032C25D29700DDEB0A /* SignupView.swift */,
 				F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */,
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5EFAEF52C25353500DDEB0A /* MembershipView.swift in Sources */,
+				F5DC8CCB2C29BD2E003991B9 /* MapView.swift in Sources */,
 				F5EFAEF32C252E2500DDEB0A /* ProfileView.swift in Sources */,
 				F5EFAEED2C23DFD800DDEB0A /* SearchView.swift in Sources */,
 				F5EFAEEF2C251CF200DDEB0A /* SearchingView.swift in Sources */,
