@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMaps
 
 struct ContentView: View {
     enum PageController {
@@ -18,6 +19,7 @@ struct ContentView: View {
         case profile
     }
     @State var curPage = PageController.home
+    @State private var totalDistance: CLLocationDistance = 0.0
     
     var body: some View {
         ZStack {

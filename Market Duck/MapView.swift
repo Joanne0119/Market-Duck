@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct MapView: View {
     @State private var boatOffsetX: CGFloat = 100
@@ -16,7 +17,10 @@ struct MapView: View {
     @State private var fish2OffsetY: CGFloat = 150
     @State private var boateRoate: CGFloat = 0
     
+    @State private var totalDistance: CLLocationDistance = 0.0
+    
     var body: some View {
+        
         NavigationStack {
             ZStack {
                 Color("ocean_color")
@@ -68,8 +72,9 @@ struct MapView: View {
                         }
                     }
                 NavigationLink{
-                    
-                }label: {
+                    AreaView(totalDistance: $totalDistance)
+                        .ignoresSafeArea()
+                }label:{
                     HStack{
                         Image("location_icon")
                             .resizable()
@@ -79,11 +84,12 @@ struct MapView: View {
                             .foregroundStyle(Color("map_text_color"))
                             .font(.system(size: 15, weight: .bold))
                     }
-                    .offset(x: 117, y: -243)
                     
                 }
+                .offset(x: 117, y: -243)
                 NavigationLink{
-                    
+                    AreaView(totalDistance: $totalDistance)
+                        .ignoresSafeArea()
                 }label: {
                     HStack{
                         Image("location_icon")
@@ -95,10 +101,12 @@ struct MapView: View {
                             .font(.system(size: 15, weight: .bold))
         
                     }
-                    .offset(x: 108, y: -198)
-                }
-                NavigationLink{
                     
+                }
+                .offset(x: 108, y: -198)
+                NavigationLink{
+                    AreaView(totalDistance: $totalDistance)
+                        .ignoresSafeArea()
                 }label: {
                     HStack{
                         Text("桃園")
@@ -109,8 +117,9 @@ struct MapView: View {
                             .scaledToFit()
                             .frame(width: 20)
                     }
-                    .offset(x: 30, y: -218)
+                    
                 }
+                .offset(x: 30, y: -218)
                 
             }
         }
