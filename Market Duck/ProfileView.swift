@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    var page: ContentView.PageController
+    @Binding var curPage: ContentView.PageController
     var body: some View {
         NavigationStack{
             ZStack(alignment: .top) {
@@ -120,8 +122,8 @@ struct ProfileView: View {
                     .padding(.vertical, 20)
                     HStack{
                         Spacer()
-                        NavigationLink{
-                            MembershipView()
+                        Button{
+                            curPage = page
                         }label: {
                             HStack{
                                 Text("登出/登入")
@@ -184,5 +186,5 @@ struct ProfileSection: View {
 }
 
 #Preview {
-    ProfileView()
+    ContentView()
 }

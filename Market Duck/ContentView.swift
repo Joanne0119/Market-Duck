@@ -11,14 +11,13 @@ import GoogleMaps
 struct ContentView: View {
     enum PageController {
         case login
-        case logout
         case home
         case map
         case search
         case favorite
         case profile
     }
-    @State var curPage = PageController.home
+    @State var curPage = PageController.login
     @State private var totalDistance: CLLocationDistance = 0.0
     
     var body: some View {
@@ -29,30 +28,38 @@ struct ContentView: View {
                 Spacer()
                 switch curPage {
                 case .login:
-                    Text("login page")
-                case .logout:
-                    Text("logout page")
+                    LoginView(page: .home, curPage: $curPage)
                 case .home:
-                    HomeView()
+                    HomeView(markets: taipieMarkets)
+                    BottomBar(curPage: $curPage)
+                        .frame(height: 100)
+                        .ignoresSafeArea(edges: .bottom)
                 case .map:
                     MapView()
+                    BottomBar(curPage: $curPage)
+                        .frame(height: 100)
+                        .ignoresSafeArea(edges: .bottom)
                 case .search:
                     SearchView()
+                    BottomBar(curPage: $curPage)
+                        .frame(height: 100)
+                        .ignoresSafeArea(edges: .bottom)
                 case .favorite:
-                    FavoriteView()
+                    FavoriteView(market: favorite)
+                    BottomBar(curPage: $curPage)
+                        .frame(height: 100)
+                        .ignoresSafeArea(edges: .bottom)
                 case .profile:
-                    ProfileView()
+                    ProfileView(page: .login, curPage: $curPage)
+                    BottomBar(curPage: $curPage)
+                        .frame(height: 100)
+                        .ignoresSafeArea(edges: .bottom)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
             
-            VStack {
-                Spacer()
-                BottomBar(curPage: $curPage)
-                    .frame(height: 100)
-            }
-            .ignoresSafeArea(edges: .bottom)
+            
         }
         
     }

@@ -16,7 +16,7 @@ struct SearchView: View {
                 VStack{
                     SearchBar()
                     ScrollView{
-                        SearchCardView()
+                        SearchCardView(market: taipieMarkets)
                             .padding(.bottom, 150)
                     }
                 }
@@ -104,13 +104,14 @@ struct SearchBar: View {
 
 
 struct SearchCardView: View{
+    let market: [Market]
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(eventCard, id: \.self) { item in
+            ForEach(market, id: \.self) { item in
                 SearchCard(item: item)
             }
         }
@@ -120,69 +121,75 @@ struct SearchCardView: View{
 
 struct SearchCard: View {
     @State var isSave: Bool = false
-    var item: String
+    var item: Market
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(item)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 144, height: 144)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+        NavigationLink{
+            InfoView(market: item)
+        }label: {
+            VStack(alignment: .leading) {
+                Image(item.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 144, height: 144)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
 
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text("名稱名稱名稱名稱名稱")
-                    .font(.system(size: 16, weight: .regular))
-                    .lineLimit(1)
-                    .frame(width: 120, alignment: .leading)
                 
-                Text("03/22-03/24")
-                    .font(.system(size: 9, weight: .regular))
-                    .lineLimit(1)
-                    .frame(width: 120, alignment: .leading)
-                
-                Text("新北投站")
-                    .font(.system(size: 9, weight: .regular))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(item.name)
+                        .font(.system(size: 16, weight: .regular))
+                        .lineLimit(1)
+                        .frame(width: 120, alignment: .leading)
+                        .foregroundStyle(.black)
+                    
+                    Text("\(item.startDate)-\(item.endDate)")
+                        .font(.system(size: 9, weight: .regular))
+                        .lineLimit(1)
+                        .frame(width: 120, alignment: .leading)
+                        .foregroundStyle(.black)
+                    
+                    Text(item.mrt)
+                        .font(.system(size: 9, weight: .regular))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 5)
+                        .frame(height: 14, alignment: .center)
+                        .background(Color(item.mrtline))
+                        .clipShape(RoundedRectangle(cornerRadius: 2))
+                }
+                .padding(.horizontal, 12)
+                .padding(.top, 5)
+                .padding(.bottom, 16)
+                .background(
+                    Button(action: {
+                        isSave.toggle()
+                    }) {
+                        Image(isSave ? "heart_save_button_selected" : "heart_save_button")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 19)
+                            .padding(3)
+                    }
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 10),
+                    alignment: .bottomTrailing
+                )
+                .background(.white)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color("line_color"), lineWidth: 2)
+            }
+            .overlay(alignment: .leading){
+                Text(item.location)
+                    .font(.system(size: 12, weight: .regular))
                     .foregroundStyle(.white)
                     .padding(.horizontal, 5)
-                    .frame(height: 14, alignment: .center)
-                    .background(Color("red_line_color"))
+                    .frame(height: 25, alignment: .center)
+                    .background(Color("label_color"))
                     .clipShape(RoundedRectangle(cornerRadius: 2))
+                    .offset(x: -6, y: 22)
+                    .shadow(radius: 4)
             }
-            .padding(.horizontal, 12)
-            .padding(.top, 5)
-            .padding(.bottom, 16)
-            .background(
-                Button(action: {
-                    isSave.toggle()
-                }) {
-                    Image(isSave ? "heart_save_button_selected" : "heart_save_button")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 19)
-                        .padding(3)
-                }
-                .padding(.trailing, 10)
-                .padding(.bottom, 10),
-                alignment: .bottomTrailing
-            )
-            .background(.white)
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color("line_color"), lineWidth: 2)
-        }
-        .overlay(alignment: .leading){
-            Text("地區地區")
-                .font(.system(size: 12, weight: .regular))
-                .foregroundStyle(.white)
-                .padding(.horizontal, 5)
-                .frame(height: 25, alignment: .center)
-                .background(Color("label_color"))
-                .clipShape(RoundedRectangle(cornerRadius: 2))
-                .offset(x: -6, y: 22)
-                .shadow(radius: 4)
         }
     }
 }

@@ -19,6 +19,8 @@ struct SignupView: View {
     @FocusState var isNameFocus: Bool
     @State var isGenderFocus: Bool = false
     @State private var isSelectedGender: Bool = false
+    var page: ContentView.PageController
+    @Binding var curPage: ContentView.PageController
 
     var body: some View {
         ZStack(alignment:.top){
@@ -152,8 +154,8 @@ struct SignupView: View {
                     
                     Spacer()
                     
-                    NavigationLink{
-                        
+                    Button{
+                        curPage = page
                     }label: {
                         Text("註冊")
                             .foregroundStyle(.white)
@@ -236,8 +238,4 @@ struct SignupView: View {
             
         }
     }
-}
-
-#Preview {
-    SignupView()
 }

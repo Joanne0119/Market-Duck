@@ -11,6 +11,9 @@
 		F5DC8CD32C29DEC5003991B9 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F5DC8CD22C29DEC5003991B9 /* GoogleMaps */; };
 		F5DC8CD52C29E1B4003991B9 /* AreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CD42C29E1B4003991B9 /* AreaView.swift */; };
 		F5DC8CDB2C2A6305003991B9 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CDA2C2A6305003991B9 /* MarketData.swift */; };
+		F5DC8CDD2C2A71CD003991B9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */; };
+		F5DC8CDF2C2ACA38003991B9 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CDE2C2ACA38003991B9 /* ReviewData.swift */; };
+		F5DC8CE12C2ACB8B003991B9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CE02C2ACB8B003991B9 /* ReviewView.swift */; };
 		F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */; };
 		F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */; };
 		F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		F5DC8CCA2C29BD2E003991B9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F5DC8CD42C29E1B4003991B9 /* AreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaView.swift; sourceTree = "<group>"; };
 		F5DC8CDA2C2A6305003991B9 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		F5DC8CDE2C2ACA38003991B9 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
+		F5DC8CE02C2ACB8B003991B9 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		F5EFAED72C2319AB00DDEB0A /* Market Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Market Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market_DuckApp.swift; sourceTree = "<group>"; };
 		F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */,
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
+				F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */,
+				F5DC8CE02C2ACB8B003991B9 /* ReviewView.swift */,
+				F5DC8CDE2C2ACA38003991B9 /* ReviewData.swift */,
 				F5DC8CCA2C29BD2E003991B9 /* MapView.swift */,
 				F5DC8CD42C29E1B4003991B9 /* AreaView.swift */,
 				F5DC8CDA2C2A6305003991B9 /* MarketData.swift */,
@@ -194,12 +203,15 @@
 				F5EFAEEF2C251CF200DDEB0A /* SearchingView.swift in Sources */,
 				F5DC8CDB2C2A6305003991B9 /* MarketData.swift in Sources */,
 				F5EFAEF12C25280100DDEB0A /* FavoriteView.swift in Sources */,
+				F5DC8CDF2C2ACA38003991B9 /* ReviewData.swift in Sources */,
 				F5DC8CD52C29E1B4003991B9 /* AreaView.swift in Sources */,
 				F5EFAEEB2C23C4A400DDEB0A /* BottomBar.swift in Sources */,
 				F5EFAEE92C23435B00DDEB0A /* HomeView.swift in Sources */,
 				F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */,
 				F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */,
 				F5EFAF042C25D29700DDEB0A /* SignupView.swift in Sources */,
+				F5DC8CE12C2ACB8B003991B9 /* ReviewView.swift in Sources */,
+				F5DC8CDD2C2A71CD003991B9 /* InfoView.swift in Sources */,
 				F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

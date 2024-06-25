@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var isSecured: Bool = false
     @FocusState var isEmailFocus: Bool
     @FocusState var isPasswordFocus: Bool
+    var page: ContentView.PageController
+    @Binding var curPage: ContentView.PageController
     var body: some View {
         NavigationStack {
             ZStack(alignment:.top){
@@ -73,8 +75,8 @@ struct LoginView: View {
                             .padding(.vertical, 8)
                         }
                         
-                        NavigationLink{
-                            
+                        Button{
+                            curPage = page
                         }label: {
                             Text("登入")
                                 .foregroundStyle(.white)
@@ -85,7 +87,7 @@ struct LoginView: View {
                         }
                         .padding(.vertical, 5)
                         NavigationLink{
-                            SignupView()
+                            SignupView(page: .home, curPage: $curPage)
                         }label: {
                             Text("註冊")
                                 .foregroundStyle(Color("line_color"))
@@ -125,7 +127,7 @@ struct LoginView: View {
                     }
                     .padding(30)
                     Button{
-                        
+                        curPage = page
                     }label: {
                         Text("訪客登入")
                             .foregroundStyle(Color("line_color"))
@@ -142,6 +144,3 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView()
-}

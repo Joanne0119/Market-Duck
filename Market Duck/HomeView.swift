@@ -12,15 +12,8 @@ let eventCarousel = [ "mk01",
                     "mk04",
                     "mk05"]
 
-
-
-let eventCard = [ "mk06",
-                "mk07",
-                "mk08",
-                "mk09",
-                "mk10"]
-
 struct HomeView: View {
+    let markets: [Market]
     var body: some View {
         NavigationStack{
             ZStack{
@@ -30,9 +23,9 @@ struct HomeView: View {
                     CarouselView()
                     CatergoryButtons()
                         .padding(.horizontal, 40)
-                    CardView(title: "最近瀏覽")
-                    CardView(title: "你可能有興趣")
-                    CardView(title: "熱門市集")
+                    CardView(title: "最近瀏覽", markets: recentHistory)
+                    CardView(title: "你可能有興趣", markets: recommend)
+                    CardView(title: "熱門市集", markets: nowTrending)
                         .padding(.bottom, 120)
                     
                 }
@@ -125,6 +118,7 @@ struct CatergoryButton: View{
 
 struct CardView: View{
     var title: String
+    var markets: [Market]
     var body: some View {
         VStack(alignment:.leading){
             Spacer()
@@ -135,7 +129,7 @@ struct CardView: View{
                 
             ScrollView(.horizontal){
                 LazyHStack(spacing: 0) {
-                    ForEach(eventCard, id: \.self) { item in
+                    ForEach(markets, id: \.self) { item in
                             Card(item: item)
                             
                     }
@@ -149,46 +143,53 @@ struct CardView: View{
 
 struct Card: View {
     @State var isSave: Bool = false
-    var item: String
+    var item: Market
     var body: some View {
-        VStack{
-            Image(item)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 125, height: 68)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .overlay{
-                    RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color("line_color"), lineWidth: 2)
-                }
-                .overlay(alignment: .topTrailing){
-                    Button(action: {
-                        isSave.toggle()
-                    }){
-                        Image(isSave ? "heart_save_button_selected" :"heart_save_button")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:24, height:19)
-                            .padding(3)
+        NavigationLink{
+            InfoView(market: item)
+        }label: {
+            VStack{
+                Image(item.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 125, height: 68)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color("line_color"), lineWidth: 2)
                     }
-                }
-                .padding(.leading, 20)
-                .padding(.vertical, 5)
-            Text("名稱名稱名稱名稱名稱")
-                .font(.system(size: 16, weight: .medium))
-                .frame(width: 120, alignment: .leading)
-                .lineLimit(1)
-                .padding(.leading)
-            Text("地區地區")
-                .font(.system(size: 12, weight: .regular))
-                .frame(width: 120, alignment: .leading)
-                .lineLimit(1)
-                .padding(.leading)
-            
+                    .overlay(alignment: .topTrailing){
+                        Button(action: {
+                            isSave.toggle()
+                        }){
+                            Image(isSave ? "heart_save_button_selected" :"heart_save_button")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:24, height:19)
+                                .padding(3)
+                        }
+                    }
+                    .padding(.leading, 20)
+                    .padding(.vertical, 5)
+                Text(item.name)
+                    .font(.system(size: 16, weight: .medium))
+                    .frame(width: 120, alignment: .leading)
+                    .lineLimit(1)
+                    .padding(.leading)
+                    .foregroundStyle(.black)
+                Text(item.location)
+                    .font(.system(size: 12, weight: .regular))
+                    .frame(width: 120, alignment: .leading)
+                    .lineLimit(1)
+                    .padding(.leading)
+                    .foregroundStyle(.black)
+                
+            }
         }
+        
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(markets: taipieMarkets)
 }

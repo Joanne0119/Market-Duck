@@ -23,6 +23,7 @@ struct MembershipView: View {
                             .font(.system(size: 24,weight: .bold))
                             .offset(x:110, y: 110)
                     }
+                    
                 Experience(experience: 3650)
                     .padding(.bottom, 30)
                 Text("小鴨會員禮遇")
@@ -69,9 +70,9 @@ struct MembershipView: View {
                         
                 }
                 .padding(.vertical, 8)
-                                    
+                 
             }
-            
+            .offset(y: -20)
         }
         .navigationTitle("我的會員")
     }

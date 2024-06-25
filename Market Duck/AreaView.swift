@@ -115,7 +115,7 @@ struct AreaView: UIViewRepresentable {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: market.latitude, longitude: market.longitude)
             marker.title = market.name
-            marker.snippet = "\(market.location) \(market.mrt)\n\(market.date)"
+            marker.snippet = "\(market.location) \(market.mrt)\n\(market.startDate)-\(market.endDate)"
             marker.map = mapView
         }
     }

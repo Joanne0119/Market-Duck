@@ -73,7 +73,7 @@ struct MapView: View {
                         }
                     }
                 NavigationLink{
-                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5280),initZoom: 12.0, markets: taipieMarkets)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5480),initZoom: 12.0, markets: taipieMarkets)
                         .ignoresSafeArea()
                 }label:{
                     HStack{
@@ -89,7 +89,7 @@ struct MapView: View {
                 }
                 .offset(x: 117, y: -243)
                 NavigationLink{
-                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0489, longitude: 121.4535), initZoom: 11.0, markets: taipieMarkets)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0489, longitude: 121.4535), initZoom: 12, markets: taipieMarkets)
                         .ignoresSafeArea()
                 }label: {
                     HStack{
