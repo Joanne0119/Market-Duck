@@ -19,6 +19,7 @@ struct MapView: View {
     
     @State private var totalDistance: CLLocationDistance = 0.0
     
+    
     var body: some View {
         
         NavigationStack {
@@ -72,7 +73,7 @@ struct MapView: View {
                         }
                     }
                 NavigationLink{
-                    AreaView(totalDistance: $totalDistance)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5280),initZoom: 12.0, markets: taipieMarkets)
                         .ignoresSafeArea()
                 }label:{
                     HStack{
@@ -88,7 +89,7 @@ struct MapView: View {
                 }
                 .offset(x: 117, y: -243)
                 NavigationLink{
-                    AreaView(totalDistance: $totalDistance)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0489, longitude: 121.4535), initZoom: 11.0, markets: taipieMarkets)
                         .ignoresSafeArea()
                 }label: {
                     HStack{
@@ -105,7 +106,7 @@ struct MapView: View {
                 }
                 .offset(x: 108, y: -198)
                 NavigationLink{
-                    AreaView(totalDistance: $totalDistance)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 24.9986, longitude: 121.2754), initZoom: 11.3, markets: taipieMarkets)
                         .ignoresSafeArea()
                 }label: {
                     HStack{
