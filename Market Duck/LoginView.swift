@@ -56,7 +56,7 @@ struct LoginView: View {
                             Button(action: {
                                 isSecured.toggle()
                             }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye.slash")
                                     .accentColor(Color("line_color"))
                             }
                         }

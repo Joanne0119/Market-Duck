@@ -14,6 +14,7 @@
 		F5DC8CDD2C2A71CD003991B9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */; };
 		F5DC8CDF2C2ACA38003991B9 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CDE2C2ACA38003991B9 /* ReviewData.swift */; };
 		F5DC8CE12C2ACB8B003991B9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CE02C2ACB8B003991B9 /* ReviewView.swift */; };
+		F5DC8CE32C2AFE0A003991B9 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC8CE22C2AFE0A003991B9 /* LaunchScreenView.swift */; };
 		F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */; };
 		F5EFAEDD2C2319AB00DDEB0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */; };
 		F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAEDE2C2319AD00DDEB0A /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		F5EFAEF32C252E2500DDEB0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF22C252E2500DDEB0A /* ProfileView.swift */; };
 		F5EFAEF52C25353500DDEB0A /* MembershipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF42C25353500DDEB0A /* MembershipView.swift */; };
 		F5EFAEF72C2548E500DDEB0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAEF62C2548E500DDEB0A /* LoginView.swift */; };
-		F5EFAF022C25D16700DDEB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */; };
 		F5EFAF042C25D29700DDEB0A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFAF032C25D29700DDEB0A /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 		F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		F5DC8CDE2C2ACA38003991B9 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
 		F5DC8CE02C2ACB8B003991B9 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		F5DC8CE22C2AFE0A003991B9 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		F5EFAED72C2319AB00DDEB0A /* Market Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Market Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market_DuckApp.swift; sourceTree = "<group>"; };
 		F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		F5EFAEF42C25353500DDEB0A /* MembershipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipView.swift; sourceTree = "<group>"; };
 		F5EFAEF62C2548E500DDEB0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Market-Duck-Info.plist"; sourceTree = SOURCE_ROOT; };
-		F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5EFAF032C25D29700DDEB0A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,6 @@
 		F5EFAECE2C2319AB00DDEB0A = {
 			isa = PBXGroup;
 			children = (
-				F5EFAF012C25D16700DDEB0A /* LaunchScreen.storyboard */,
 				F5EFAED92C2319AB00DDEB0A /* Market Duck */,
 				F5EFAED82C2319AB00DDEB0A /* Products */,
 			);
@@ -88,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F5EFAF002C25D09200DDEB0A /* Market-Duck-Info.plist */,
+				F5DC8CE22C2AFE0A003991B9 /* LaunchScreenView.swift */,
 				F5EFAEDA2C2319AB00DDEB0A /* Market_DuckApp.swift */,
 				F5EFAEDC2C2319AB00DDEB0A /* ContentView.swift */,
 				F5DC8CDC2C2A71CD003991B9 /* InfoView.swift */,
@@ -183,7 +183,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5EFAF022C25D16700DDEB0A /* LaunchScreen.storyboard in Resources */,
 				F5EFAEE22C2319AD00DDEB0A /* Preview Assets.xcassets in Resources */,
 				F5EFAEDF2C2319AD00DDEB0A /* Assets.xcassets in Resources */,
 			);
@@ -213,6 +212,7 @@
 				F5DC8CE12C2ACB8B003991B9 /* ReviewView.swift in Sources */,
 				F5DC8CDD2C2A71CD003991B9 /* InfoView.swift in Sources */,
 				F5EFAEDB2C2319AB00DDEB0A /* Market_DuckApp.swift in Sources */,
+				F5DC8CE32C2AFE0A003991B9 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Market Duck/Preview Content\"";
@@ -353,7 +354,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Market Duck/Preview Content\"";
@@ -384,7 +386,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
