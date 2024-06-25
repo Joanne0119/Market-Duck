@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteView: View {
-    var market: [Market]
+    @State var market: [Market]
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -20,7 +20,9 @@ struct FavoriteView: View {
                     .ignoresSafeArea()
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(market, id: \.self) { item in
-                        FavoriteCard(item: item)
+                        if item.isFavorite {
+                            FavoriteCard(item: item)
+                        }
                     }
                 }
                 .padding(.horizontal, 20)
@@ -33,8 +35,7 @@ struct FavoriteView: View {
 }
 
 struct FavoriteCard: View {
-    var item: Market
-    @State var isSave: Bool = true
+    @State var item: Market
     var body: some View {
         NavigationLink{
             InfoView(market: item)
@@ -76,9 +77,9 @@ struct FavoriteCard: View {
                 }
                 .overlay(alignment: .topTrailing) {
                     Button(action: {
-                        isSave.toggle()
+                        item.isFavorite.toggle()
                     }) {
-                        Image(isSave ? "favorite_heart_icon_selected" : "favorite_heart_icon")
+                        Image(item.isFavorite ? "favorite_heart_icon_selected" : "favorite_heart_icon")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 28)
@@ -93,5 +94,5 @@ struct FavoriteCard: View {
 }
 
 #Preview {
-    FavoriteView(market: favorite)
+    FavoriteView(market: taipieMarkets)
 }

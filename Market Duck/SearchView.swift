@@ -120,8 +120,7 @@ struct SearchCardView: View{
 }
 
 struct SearchCard: View {
-    @State var isSave: Bool = false
-    var item: Market
+    @State var item: Market
     
     var body: some View {
         NavigationLink{
@@ -161,9 +160,9 @@ struct SearchCard: View {
                 .padding(.bottom, 16)
                 .background(
                     Button(action: {
-                        isSave.toggle()
+                        item.isFavorite.toggle()
                     }) {
-                        Image(isSave ? "heart_save_button_selected" : "heart_save_button")
+                        Image(item.isFavorite ? "heart_save_button_selected" : "heart_save_button")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24, height: 19)

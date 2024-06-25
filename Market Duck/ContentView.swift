@@ -45,7 +45,7 @@ struct ContentView: View {
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
                 case .favorite:
-                    FavoriteView(market: favorite)
+                    FavoriteView(market: taipieMarkets)
                     BottomBar(curPage: $curPage)
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)

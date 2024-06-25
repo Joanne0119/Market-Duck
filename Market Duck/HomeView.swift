@@ -142,8 +142,7 @@ struct CardView: View{
 }
 
 struct Card: View {
-    @State var isSave: Bool = false
-    var item: Market
+    @State var item: Market
     var body: some View {
         NavigationLink{
             InfoView(market: item)
@@ -160,9 +159,9 @@ struct Card: View {
                     }
                     .overlay(alignment: .topTrailing){
                         Button(action: {
-                            isSave.toggle()
+                            item.isFavorite.toggle()
                         }){
-                            Image(isSave ? "heart_save_button_selected" :"heart_save_button")
+                            Image(item.isFavorite ? "heart_save_button_selected" :"heart_save_button")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:24, height:19)

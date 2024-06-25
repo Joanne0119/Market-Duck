@@ -9,21 +9,21 @@ import SwiftUI
 import CoreLocation
 
 struct InfoView: View {
-    let market: Market
-    @State var isSave: Bool = false
+    @State var market: Market
     var body: some View {
         ZStack {
             Color("background_color")
                 .ignoresSafeArea()
             
             ScrollView{
+                Image(market.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width, height: 300)
+                    .clipped()
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
-                        Image(market.image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: UIScreen.main.bounds.width, height: 300)
-                            .clipped()
+                        
                         Text("贊助內容")
                             .font(.system(size: 10))
                             .padding(.vertical, 5)
@@ -45,7 +45,11 @@ struct InfoView: View {
                                         .clipShape(RoundedRectangle(cornerRadius: 5))
                                 }
                             }
-                            ScoreView(market: market)
+                            HStack{
+                                ScoreView(market: market)
+                                Spacer()
+                            }
+                           
                         }
                         .padding(.leading)
                         
@@ -54,9 +58,9 @@ struct InfoView: View {
                     .overlay(alignment: .bottomTrailing){
                         HStack {
                             Button(action: {
-                                isSave.toggle()
+                                market.isFavorite.toggle()
                             }) {
-                                Image(isSave ? "favorite_heart_icon_selected" : "favorite_heart_icon")
+                                Image(market.isFavorite ? "favorite_heart_icon_selected" : "favorite_heart_icon")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 28)
@@ -72,7 +76,7 @@ struct InfoView: View {
                                     .foregroundStyle(Color.black)
                                     .padding(3)
                             }
-                            .padding(.trailing, 10)
+                            .padding(.trailing, 20)
                             .padding(.top, 10)
 
                         }
@@ -156,6 +160,7 @@ struct InfoView: View {
                     .padding(.top)
                     .padding(.bottom, 30)
                     .padding(.leading)
+                    
                 }
                 .padding(.leading)
             }
@@ -205,5 +210,5 @@ struct ScoreView:View {
 
 
 #Preview {
-    InfoView(market: Market(image: "mk01", name: "心中山有趣市", latitude: 25.05582, longitude: 121.5206, tags: ["美食", "文創", "節慶", "台北"], location: " 台北中山", startDate: "2024/5/3", endDate: "2024/5/26",time: "13:00-21:00(週日至20:00)",mrt: "中山站", mrtline: "red_line_color", score: 4.5, totalReview: 130, info: "春日的綠意、繽紛。\n隨著時日的推移，走入尾端的盛開滿溢。\n日光落下後的暖意依舊，在盞盞燈光中循線尋找小物。\n讓小物在人群之間發光，訴說自身的故事。"))
+    InfoView(market: Market(image: "mk01", name: "心中山有趣市", latitude: 25.05582, longitude: 121.5206, tags: ["美食", "文創", "節慶", "台北"], location: " 台北中山", startDate: "2024/5/3", endDate: "2024/5/26",time: "13:00-21:00(週日至20:00)",mrt: "中山站", mrtline: "red_line_color", score: 4.5, totalReview: 130, info: "春日的綠意、繽紛。\n隨著時日的推移，走入尾端的盛開滿溢。\n日光落下後的暖意依舊，在盞盞燈光中循線尋找小物。\n讓小物在人群之間發光，訴說自身的故事。", isFavorite: false))
 }
