@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var account: String = ""
     @State private var password: String = ""
-    @State private var isSecured: Bool = false
+    @State private var isSecured: Bool = true
     @FocusState var isEmailFocus: Bool
     @FocusState var isPasswordFocus: Bool
     var page: ContentView.PageController
@@ -56,7 +56,7 @@ struct LoginView: View {
                             Button(action: {
                                 isSecured.toggle()
                             }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye.slash")
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
                                     .accentColor(Color("line_color"))
                             }
                         }

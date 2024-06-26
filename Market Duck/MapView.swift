@@ -18,7 +18,7 @@ struct MapView: View {
     @State private var boateRoate: CGFloat = 0
     
     @State private var totalDistance: CLLocationDistance = 0.0
-    
+    @ObservedObject var markets: MarketData
     
     var body: some View {
         
@@ -73,7 +73,7 @@ struct MapView: View {
                         }
                     }
                 NavigationLink{
-                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5480),initZoom: 12.0, markets: taipieMarkets)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5480),initZoom: 12.0, markets: markets)
                         .ignoresSafeArea()
                 }label:{
                     HStack{
@@ -89,7 +89,7 @@ struct MapView: View {
                 }
                 .offset(x: 117, y: -243)
                 NavigationLink{
-                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0489, longitude: 121.4535), initZoom: 12, markets: taipieMarkets)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 25.0489, longitude: 121.4535), initZoom: 12, markets: markets)
                         .ignoresSafeArea()
                 }label: {
                     HStack{
@@ -106,7 +106,7 @@ struct MapView: View {
                 }
                 .offset(x: 108, y: -198)
                 NavigationLink{
-                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 24.9986, longitude: 121.2754), initZoom: 11.3, markets: taipieMarkets)
+                    AreaView(initialLocation: CLLocationCoordinate2D(latitude: 24.9986, longitude: 121.2754), initZoom: 11.3, markets: markets)
                         .ignoresSafeArea()
                 }label: {
                     HStack{
@@ -129,6 +129,6 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView()
+    ContentView()
 }
 

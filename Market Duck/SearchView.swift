@@ -113,7 +113,7 @@ struct SearchCardView: View{
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach(markets.markets, id: \.self) { item in
-                SearchCard(market: item)
+                SearchCard(market: item, markets: markets)
             }
         }
         .padding(.horizontal, 20)
@@ -122,10 +122,10 @@ struct SearchCardView: View{
 
 struct SearchCard: View {
     @StateObject var market: Market
-
+    @ObservedObject var markets: MarketData
     var body: some View {
         NavigationLink{
-            InfoView(market: market)
+            InfoView(market: market, markets: markets)
         }label: {
             VStack(alignment: .leading) {
                 Image(market.image)

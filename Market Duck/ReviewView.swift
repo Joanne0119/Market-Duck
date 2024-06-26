@@ -13,9 +13,27 @@ struct ReviewView: View {
             Color("background_color")
                 .ignoresSafeArea()
             VStack{
-                ReviewCard(review: Review(content: "整體非常不錯，逛起來很舒服。", userName: "pp", userImage: "default_profile_photo", score: 4))
+                HStack{
+                    Text("全部評論")
+                        .padding(.leading)
+                        .padding()
+                        .font(.system(size: 20))
+                    Text("附上照片")
+                        .padding(.trailing)
+                        .padding()
+                        .font(.system(size: 20))
+                }
+                .frame(width: UIScreen.main.bounds.width)
+                .shadow(radius: 30)
+                
+                
+                ScrollView{
+                    ForEach(reviewData, id: \.self) { item in
+                        ReviewCard(review: item)
+                    }
+                }
+                .scrollIndicators(.hidden)
             }
-            
         }
         .navigationTitle("評論")
         .navigationBarTitleDisplayMode(.inline)

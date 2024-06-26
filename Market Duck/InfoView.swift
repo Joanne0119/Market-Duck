@@ -10,6 +10,7 @@ import CoreLocation
 
 struct InfoView: View {
     @ObservedObject var market: Market
+    @ObservedObject var markets: MarketData
     var body: some View {
         ZStack {
             Color("background_color")
@@ -108,7 +109,7 @@ struct InfoView: View {
                             .font(.title2)
                             .fontWeight(.medium)
                         Text(market.location)
-                        AreaView(initialLocation: CLLocationCoordinate2D(latitude: market.latitude, longitude: market.longitude),initZoom: 16.0, markets: [market])
+                        AreaView(initialLocation: CLLocationCoordinate2D(latitude: market.latitude, longitude: market.longitude),initZoom: 16.0, markets: markets)
                             .frame(width: UIScreen.main.bounds.width-50, height: 300)
                            
                     }
@@ -210,5 +211,5 @@ struct ScoreView:View {
 
 
 #Preview {
-    InfoView(market: Market(image: "mk01", name: "心中山有趣市", latitude: 25.05582, longitude: 121.5206, tags: ["美食", "文創", "節慶", "台北"], location: " 台北中山", startDate: "2024/5/3", endDate: "2024/5/26",time: "13:00-21:00(週日至20:00)",mrt: "中山站", mrtline: "red_line_color", score: 4.5, totalReview: 130, info: "春日的綠意、繽紛。\n隨著時日的推移，走入尾端的盛開滿溢。\n日光落下後的暖意依舊，在盞盞燈光中循線尋找小物。\n讓小物在人群之間發光，訴說自身的故事。", isFavorite: false))
+    ContentView()
 }

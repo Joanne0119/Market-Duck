@@ -37,7 +37,7 @@ struct ContentView: View {
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
                 case .map:
-                    MapView()
+                    MapView(markets: marketData)
                     BottomBar(curPage: $curPage)
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)

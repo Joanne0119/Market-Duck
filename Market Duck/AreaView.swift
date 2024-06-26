@@ -102,7 +102,7 @@ import CoreLocation
 struct AreaView: UIViewRepresentable {
     let initialLocation: CLLocationCoordinate2D
     let initZoom: Float
-    let markets: [Market]
+    @ObservedObject var markets: MarketData
 
     func makeUIView(context: Self.Context) -> GMSMapView {
         let camera = GMSCameraPosition.camera(withLatitude: initialLocation.latitude, longitude: initialLocation.longitude, zoom: initZoom)
@@ -111,7 +111,7 @@ struct AreaView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: GMSMapView, context: Self.Context) {
-        for market in markets {
+        for market in markets.markets {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: market.latitude, longitude: market.longitude)
             marker.title = market.name

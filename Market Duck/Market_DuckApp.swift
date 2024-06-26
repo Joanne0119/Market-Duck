@@ -14,7 +14,7 @@ struct Market_DuckApp: App {
        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchScreenView()
         }
     }
 }

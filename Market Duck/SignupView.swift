@@ -13,7 +13,7 @@ struct SignupView: View {
     @State private var name: String = ""
     @State private var gender: Bool = true //true->boy, false->girl
     @State private var birthday = Date()
-    @State private var isSecured: Bool = false
+    @State private var isSecured: Bool = true
     @FocusState var isEmailFocus: Bool
     @FocusState var isPasswordFocus: Bool
     @FocusState var isNameFocus: Bool

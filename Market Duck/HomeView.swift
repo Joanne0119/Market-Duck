@@ -130,7 +130,7 @@ struct CardView: View{
             ScrollView(.horizontal){
                 LazyHStack(spacing: 0) {
                     ForEach(markets.markets, id: \.self) { item in
-                        Card(market: item)
+                        Card(market: item, markets: markets)
                             
                     }
                 }
@@ -143,9 +143,10 @@ struct CardView: View{
 
 struct Card: View {
     @StateObject var market: Market
+    @ObservedObject var markets: MarketData
     var body: some View {
         NavigationLink{
-            InfoView(market: market)
+            InfoView(market: market, markets: markets)
         }label: {
             VStack{
                 Image(market.image)

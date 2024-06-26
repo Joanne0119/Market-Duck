@@ -21,7 +21,7 @@ struct FavoriteView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(markets.markets, id: \.self) { item in
                         if item.isFavorite {
-                            FavoriteCard(market: item)
+                            FavoriteCard(market: item, markets: markets)
                         }
                     }
                 }
@@ -36,9 +36,10 @@ struct FavoriteView: View {
 
 struct FavoriteCard: View {
     @StateObject var market: Market
+    @ObservedObject var markets: MarketData
     var body: some View {
         NavigationLink{
-            InfoView(market: market)
+            InfoView(market: market, markets: markets)
         }label: {
             Image(market.image)
                 .resizable()
