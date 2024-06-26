@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteView: View {
-    @State var market: [Market]
+    @ObservedObject var markets: MarketData
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -19,9 +19,9 @@ struct FavoriteView: View {
                 Color("background_color")
                     .ignoresSafeArea()
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(market, id: \.self) { item in
+                    ForEach(markets.markets, id: \.self) { item in
                         if item.isFavorite {
-                            FavoriteCard(item: item)
+                            FavoriteCard(market: item)
                         }
                     }
                 }
@@ -35,18 +35,18 @@ struct FavoriteView: View {
 }
 
 struct FavoriteCard: View {
-    @State var item: Market
+    @StateObject var market: Market
     var body: some View {
         NavigationLink{
-            InfoView(market: item)
+            InfoView(market: market)
         }label: {
-            Image(item.image)
+            Image(market.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 144, height: 144)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .overlay{
-                    if item.isEnd{
+                    if market.isEnd{
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color("trending_block_color").opacity(0.8))
@@ -65,7 +65,7 @@ struct FavoriteCard: View {
                         .stroke(Color("line_color"), lineWidth: 2)
                 }
                 .overlay(alignment: .bottomLeading){
-                    Text(item.location)
+                    Text(market.location)
                         .font(.system(size: 12, weight: .regular))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 5)
@@ -77,9 +77,9 @@ struct FavoriteCard: View {
                 }
                 .overlay(alignment: .topTrailing) {
                     Button(action: {
-                        item.isFavorite.toggle()
+                        market.isFavorite.toggle()
                     }) {
-                        Image(item.isFavorite ? "favorite_heart_icon_selected" : "favorite_heart_icon")
+                        Image(market.isFavorite ? "favorite_heart_icon_selected" : "favorite_heart_icon")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 28)
@@ -94,5 +94,5 @@ struct FavoriteCard: View {
 }
 
 #Preview {
-    FavoriteView(market: taipieMarkets)
+    ContentView()
 }

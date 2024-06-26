@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var markets: MarketData
     var body: some View {
         NavigationStack{
             ZStack{
@@ -16,7 +17,7 @@ struct SearchView: View {
                 VStack{
                     SearchBar()
                     ScrollView{
-                        SearchCardView(market: taipieMarkets)
+                        SearchCardView(markets: markets)
                             .padding(.bottom, 150)
                     }
                 }
@@ -104,15 +105,15 @@ struct SearchBar: View {
 
 
 struct SearchCardView: View{
-    let market: [Market]
+    @ObservedObject var markets: MarketData
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(market, id: \.self) { item in
-                SearchCard(item: item)
+            ForEach(markets.markets, id: \.self) { item in
+                SearchCard(market: item)
             }
         }
         .padding(.horizontal, 20)
@@ -120,14 +121,14 @@ struct SearchCardView: View{
 }
 
 struct SearchCard: View {
-    @State var item: Market
-    
+    @StateObject var market: Market
+
     var body: some View {
         NavigationLink{
-            InfoView(market: item)
+            InfoView(market: market)
         }label: {
             VStack(alignment: .leading) {
-                Image(item.image)
+                Image(market.image)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 144, height: 144)
@@ -135,24 +136,24 @@ struct SearchCard: View {
 
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(item.name)
+                    Text(market.name)
                         .font(.system(size: 16, weight: .regular))
                         .lineLimit(1)
                         .frame(width: 120, alignment: .leading)
                         .foregroundStyle(.black)
                     
-                    Text("\(item.startDate)-\(item.endDate)")
+                    Text("\(market.startDate)-\(market.endDate)")
                         .font(.system(size: 9, weight: .regular))
                         .lineLimit(1)
                         .frame(width: 120, alignment: .leading)
                         .foregroundStyle(.black)
                     
-                    Text(item.mrt)
+                    Text(market.mrt)
                         .font(.system(size: 9, weight: .regular))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 5)
                         .frame(height: 14, alignment: .center)
-                        .background(Color(item.mrtline))
+                        .background(Color(market.mrtline))
                         .clipShape(RoundedRectangle(cornerRadius: 2))
                 }
                 .padding(.horizontal, 12)
@@ -160,9 +161,9 @@ struct SearchCard: View {
                 .padding(.bottom, 16)
                 .background(
                     Button(action: {
-                        item.isFavorite.toggle()
+                        market.isFavorite.toggle()
                     }) {
-                        Image(item.isFavorite ? "heart_save_button_selected" : "heart_save_button")
+                        Image(market.isFavorite ? "heart_save_button_selected" : "heart_save_button")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24, height: 19)
@@ -179,7 +180,7 @@ struct SearchCard: View {
                     .stroke(Color("line_color"), lineWidth: 2)
             }
             .overlay(alignment: .leading){
-                Text(item.location)
+                Text(market.location)
                     .font(.system(size: 12, weight: .regular))
                     .foregroundStyle(.white)
                     .padding(.horizontal, 5)
@@ -193,5 +194,5 @@ struct SearchCard: View {
     }
 }
 #Preview {
-    SearchView()
+    ContentView()
 }

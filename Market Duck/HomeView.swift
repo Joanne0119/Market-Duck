@@ -13,7 +13,7 @@ let eventCarousel = [ "mk01",
                     "mk05"]
 
 struct HomeView: View {
-    let markets: [Market]
+    @ObservedObject var markets: MarketData
     var body: some View {
         NavigationStack{
             ZStack{
@@ -23,9 +23,9 @@ struct HomeView: View {
                     CarouselView()
                     CatergoryButtons()
                         .padding(.horizontal, 40)
-                    CardView(title: "最近瀏覽", markets: recentHistory)
-                    CardView(title: "你可能有興趣", markets: recommend)
-                    CardView(title: "熱門市集", markets: nowTrending)
+                    CardView(title: "最近瀏覽", markets: markets)
+                    CardView(title: "你可能有興趣", markets: markets)
+                    CardView(title: "熱門市集", markets: markets)
                         .padding(.bottom, 120)
                     
                 }
@@ -118,7 +118,7 @@ struct CatergoryButton: View{
 
 struct CardView: View{
     var title: String
-    var markets: [Market]
+    @ObservedObject var markets: MarketData
     var body: some View {
         VStack(alignment:.leading){
             Spacer()
@@ -129,8 +129,8 @@ struct CardView: View{
                 
             ScrollView(.horizontal){
                 LazyHStack(spacing: 0) {
-                    ForEach(markets, id: \.self) { item in
-                            Card(item: item)
+                    ForEach(markets.markets, id: \.self) { item in
+                        Card(market: item)
                             
                     }
                 }
@@ -142,13 +142,13 @@ struct CardView: View{
 }
 
 struct Card: View {
-    @State var item: Market
+    @StateObject var market: Market
     var body: some View {
         NavigationLink{
-            InfoView(market: item)
+            InfoView(market: market)
         }label: {
             VStack{
-                Image(item.image)
+                Image(market.image)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 125, height: 68)
@@ -159,9 +159,9 @@ struct Card: View {
                     }
                     .overlay(alignment: .topTrailing){
                         Button(action: {
-                            item.isFavorite.toggle()
+                            market.isFavorite.toggle()
                         }){
-                            Image(item.isFavorite ? "heart_save_button_selected" :"heart_save_button")
+                            Image(market.isFavorite ? "heart_save_button_selected" :"heart_save_button")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:24, height:19)
@@ -170,13 +170,13 @@ struct Card: View {
                     }
                     .padding(.leading, 20)
                     .padding(.vertical, 5)
-                Text(item.name)
+                Text(market.name)
                     .font(.system(size: 16, weight: .medium))
                     .frame(width: 120, alignment: .leading)
                     .lineLimit(1)
                     .padding(.leading)
                     .foregroundStyle(.black)
-                Text(item.location)
+                Text(market.location)
                     .font(.system(size: 12, weight: .regular))
                     .frame(width: 120, alignment: .leading)
                     .lineLimit(1)
@@ -190,5 +190,5 @@ struct Card: View {
 }
 
 #Preview {
-    HomeView(markets: taipieMarkets)
+   ContentView()
 }

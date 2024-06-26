@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct InfoView: View {
-    @State var market: Market
+    @ObservedObject var market: Market
     var body: some View {
         ZStack {
             Color("background_color")

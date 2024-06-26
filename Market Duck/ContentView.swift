@@ -19,6 +19,8 @@ struct ContentView: View {
     }
     @State var curPage = PageController.login
     @State private var totalDistance: CLLocationDistance = 0.0
+    @StateObject var marketData = MarketData()
+    
     
     var body: some View {
         ZStack {
@@ -30,7 +32,7 @@ struct ContentView: View {
                 case .login:
                     LoginView(page: .home, curPage: $curPage)
                 case .home:
-                    HomeView(markets: taipieMarkets)
+                    HomeView(markets: marketData)
                     BottomBar(curPage: $curPage)
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
@@ -40,12 +42,12 @@ struct ContentView: View {
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
                 case .search:
-                    SearchView()
+                    SearchView(markets: marketData)
                     BottomBar(curPage: $curPage)
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
                 case .favorite:
-                    FavoriteView(market: taipieMarkets)
+                    FavoriteView(markets: marketData)
                     BottomBar(curPage: $curPage)
                         .frame(height: 100)
                         .ignoresSafeArea(edges: .bottom)
