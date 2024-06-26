@@ -55,6 +55,10 @@ struct SearchingView: View{
             }
             .padding(.horizontal, 35)
             .padding(.vertical, 5)
+            .onTapGesture {
+                isMessageFocus = false
+            }
+              
         }
     }
 }

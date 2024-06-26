@@ -176,7 +176,12 @@ struct SignupView: View {
             
 
         }
-        
+        .onTapGesture {
+            isEmailFocus = false
+            isPasswordFocus = false
+            isNameFocus = false
+            isGenderFocus = false
+        }
         .overlay(alignment: .center){
             if isSelectedGender {
                 ZStack {

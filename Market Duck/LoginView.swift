@@ -138,6 +138,10 @@ struct LoginView: View {
                 
 
             }
+            .onTapGesture {
+                isEmailFocus = false
+                isPasswordFocus = false
+            }
             .navigationTitle("登入")
             .navigationBarHidden(true)
         }
