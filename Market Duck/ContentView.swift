@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var curPage = PageController.login
     @State private var totalDistance: CLLocationDistance = 0.0
     @StateObject var marketData = MarketData()
+    @Environment(\.dismiss) private var dismiss
     
     
     var body: some View {

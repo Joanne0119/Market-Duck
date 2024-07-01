@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchingView: View{
     @State private var message: String = ""
     @FocusState var isMessageFocus: Bool
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         ZStack(alignment:.top) {
@@ -59,6 +59,19 @@ struct SearchingView: View{
                 isMessageFocus = false
             }
               
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading){
+                Button{
+                    presentationMode.wrappedValue.dismiss()
+                    
+                }label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                }
+            }
+            
         }
     }
 }

@@ -11,6 +11,7 @@ import CoreLocation
 struct InfoView: View {
     @ObservedObject var market: Market
     @ObservedObject var markets: MarketData
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             Color("background_color")
@@ -167,6 +168,19 @@ struct InfoView: View {
             }
             .navigationTitle(market.name)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading){
+                    Button{
+                        presentationMode.wrappedValue.dismiss()
+                        
+                    }label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundStyle(.black)
+                    }
+                }
+                
+            }
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReviewView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             Color("background_color")
@@ -37,6 +38,19 @@ struct ReviewView: View {
         }
         .navigationTitle("評論")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading){
+                Button{
+                    presentationMode.wrappedValue.dismiss()
+                    
+                }label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                }
+            }
+            
+        }
     }
 }
 

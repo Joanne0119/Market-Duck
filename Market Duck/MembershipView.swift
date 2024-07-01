@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MembershipView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         ZStack(alignment: .top) {
@@ -75,6 +76,19 @@ struct MembershipView: View {
             .offset(y: -20)
         }
         .navigationTitle("我的會員")
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading){
+                Button{
+                    presentationMode.wrappedValue.dismiss()
+                    
+                }label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                }
+            }
+            
+        }
     }
 }
 

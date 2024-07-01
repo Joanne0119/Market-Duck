@@ -21,6 +21,7 @@ struct SignupView: View {
     @State private var isSelectedGender: Bool = false
     var page: ContentView.PageController
     @Binding var curPage: ContentView.PageController
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack(alignment:.top){
@@ -238,6 +239,19 @@ struct SignupView: View {
                         
                     }
                     
+                }
+            }
+            
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading){
+                Button{
+                    presentationMode.wrappedValue.dismiss()
+                    
+                }label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
                 }
             }
             
