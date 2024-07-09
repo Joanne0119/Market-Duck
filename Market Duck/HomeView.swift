@@ -129,7 +129,7 @@ struct CardView: View{
                 
             ScrollView(.horizontal){
                 LazyHStack(spacing: 0) {
-                    ForEach(markets.markets, id: \.self) { item in
+                    ForEach(markets.markets.shuffled(), id: \.self) { item in
                         Card(market: item, markets: markets)
                             
                     }

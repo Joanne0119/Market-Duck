@@ -53,7 +53,7 @@ struct SearchBar: View {
             .overlay {
                 RoundedRectangle(cornerRadius: 50)
                     .stroke(Color("line_color"), lineWidth: 3)
-                    .frame(width: 300)
+                    .frame(width: 316)
                     
             }
             .background(.white)
@@ -131,13 +131,13 @@ struct SearchCard: View {
                 Image(market.image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 144, height: 144)
+                    .frame(width: 148, height: 154)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
 
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(market.name)
-                        .font(.system(size: 16, weight: .regular))
+                        .font(.system(size: 14, weight: .regular))
                         .lineLimit(1)
                         .frame(width: 120, alignment: .leading)
                         .foregroundStyle(.black)
@@ -156,9 +156,8 @@ struct SearchCard: View {
                         .background(Color(market.mrtline))
                         .clipShape(RoundedRectangle(cornerRadius: 2))
                 }
-                .padding(.horizontal, 12)
-                .padding(.top, 5)
-                .padding(.bottom, 16)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 10)
                 .background(
                     Button(action: {
                         market.isFavorite.toggle()
@@ -169,8 +168,8 @@ struct SearchCard: View {
                             .frame(width: 24, height: 19)
                             .padding(3)
                     }
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 10),
+                    .padding(.trailing, 2)
+                    .padding(.bottom, 8),
                     alignment: .bottomTrailing
                 )
                 .background(.white)
@@ -181,12 +180,13 @@ struct SearchCard: View {
             }
             .overlay(alignment: .leading){
                 Text(market.location)
-                    .font(.system(size: 12, weight: .regular))
+                    .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 5)
+                    .padding(.horizontal, 9)
+                    .padding(.vertical, 7)
                     .frame(height: 25, alignment: .center)
                     .background(Color("label_color"))
-                    .clipShape(RoundedRectangle(cornerRadius: 2))
+                    .clipShape(RoundedRectangle(cornerRadius: 3))
                     .offset(x: -6, y: 22)
                     .shadow(radius: 4)
             }

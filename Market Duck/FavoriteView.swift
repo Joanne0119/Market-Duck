@@ -18,15 +18,18 @@ struct FavoriteView: View {
             ZStack(alignment: .top) {
                 Color("background_color")
                     .ignoresSafeArea()
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(markets.markets, id: \.self) { item in
-                        if item.isFavorite {
-                            FavoriteCard(market: item, markets: markets)
+                ScrollView{
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(markets.markets, id: \.self) { item in
+                            if item.isFavorite {
+                                FavoriteCard(market: item, markets: markets)
+                            }
                         }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 20)
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 20)
+                
             }
             .navigationTitle("我的市集")
         }
@@ -67,13 +70,13 @@ struct FavoriteCard: View {
                 }
                 .overlay(alignment: .bottomLeading){
                     Text(market.location)
-                        .font(.system(size: 12, weight: .regular))
+                        .font(.system(size: 13, weight: .regular))
                         .foregroundStyle(.white)
-                        .padding(.horizontal, 5)
+                        .padding(.horizontal, 9)
                         .frame(height: 25, alignment: .center)
                         .background(Color("label_color"))
-                        .clipShape(RoundedRectangle(cornerRadius: 2))
-                        .offset(x: -6, y: -5)
+                        .clipShape(RoundedRectangle(cornerRadius: 3))
+                        .offset(x: -6, y: -8)
                         .shadow(radius: 4)
                 }
                 .overlay(alignment: .topTrailing) {
