@@ -35,7 +35,7 @@ struct ProfileView: View {
                             .padding(.vertical, 5)
                         }
                         NavigationLink{
-                            MembershipView()
+                            
                         }label: {
                             HStack{
                                 Image(systemName: "bell")
@@ -50,7 +50,7 @@ struct ProfileView: View {
                             .padding(.vertical, 5)
                         }
                         NavigationLink{
-                            MembershipView()
+                           
                         }label: {
                             HStack{
                                 Image(systemName: "gift")
@@ -65,7 +65,7 @@ struct ProfileView: View {
                             .padding(.vertical, 5)
                         }
                         NavigationLink{
-                            MembershipView()
+                            
                         }label: {
                             HStack{
                                 Image(systemName: "gearshape")
@@ -88,7 +88,7 @@ struct ProfileView: View {
                         
                     VStack(alignment: .leading){
                         NavigationLink{
-                            MembershipView()
+                            
                         }label: {
                             HStack{
                                 Image(systemName: "questionmark.circle")
@@ -103,7 +103,7 @@ struct ProfileView: View {
                             .padding(.vertical, 5)
                         }
                         NavigationLink{
-                            MembershipView()
+                            
                         }label: {
                             HStack{
                                 Image(systemName: "info.circle")
